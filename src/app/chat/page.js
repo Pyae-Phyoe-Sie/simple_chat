@@ -76,6 +76,7 @@ export default function Chat() {
           </div>
 
           <div className="message" id="conversation">
+            <p className="text-center">Load previous message</p>
             {chatMessages.map((value, index) => {
               if (value.from == username) {
                 return <div className="message-body" key={index}>
