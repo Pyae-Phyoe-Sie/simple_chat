@@ -43,17 +43,19 @@ export default function Chat() {
   };
 
   const sendMessage = () => {
-    let messagesList = chatMessages;
+    if (message != "") {
+      let messagesList = chatMessages;
 
-    messagesList.push({
-      "from": username,
-      "message": message
-    })
-    
-    localStorage.setItem("messages", JSON.stringify(messagesList))
-    setChatMessages(messagesList)
-    setNeedToFetch(true)
-    setMessage("")
+      messagesList.push({
+        "from": username,
+        "message": message
+      })
+      
+      localStorage.setItem("messages", JSON.stringify(messagesList))
+      setChatMessages(messagesList)
+      setNeedToFetch(true)
+      setMessage("")
+    }
   };
 
   return (
